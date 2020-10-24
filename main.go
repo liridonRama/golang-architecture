@@ -23,6 +23,10 @@ type human interface {
 	speak()
 }
 
+func foo(h human) {
+	h.speak()
+}
+
 func main() {
 	p1 := person{
 		first: "Miss Moneypenny",
@@ -32,6 +36,6 @@ func main() {
 	var x, y human
 	x, y = p1, s1
 
-	x.speak()
-	y.speak()
+	foo(x)
+	foo(y)
 }
